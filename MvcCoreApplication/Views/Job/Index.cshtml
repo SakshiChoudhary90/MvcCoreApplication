@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+
+
+            <th>JobID</th>
+            <th>Job Title</th>
+            <th>Job Added Date </th>
+
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+
+
+        @foreach (var jo in ViewBag.jobList)
+        {
+        <tr>
+            <td>@jo.JobId</td>
+            <td>@jo.JobTitle</td>
+            <td>@jo.JobAddedDate</td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = jo.JobId }) |
+                @Html.ActionLink("Details", "Details", new { id = jo.JobId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = jo.JobId }) |
+            </td>
+
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<ul>
+    @* @foreach(var dep in ViewBag.departmentList)
+        {
+            <li>@dep.Id - @dep.Name - @dep.Location</li>
+        }
+    *@
+</ul>
+<table>
+    <thead>
+        <tr>
+
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Department Added Date</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+
+       
+        @foreach (var dep in ViewBag.departmentList)
+        {
+            <tr>
+                <td>@dep.Id</td>
+                <td>@dep.Name</td>
+               
+                <td>@dep.Location</td>
+                <td>@dep.Email</td>
+                <td>@dep.DepartmentAddress</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = dep.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = dep.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = dep.Id }) |
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

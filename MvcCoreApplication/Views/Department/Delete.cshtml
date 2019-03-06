@@ -1,0 +1,29 @@
+﻿@model MvcCoreApplication.Models.Department
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+<h2> Are You sure to  Delete the Value </h2>
+
+@Html.DisplayFor(model => model.Name)
+<br>
+
+@Html.DisplayFor(model => model.Location)
+<br>
+
+@Html.DisplayFor(model => model.Email)
+<br>
+
+@Html.DisplayFor(model => model.DepartmentAddress)
+<br>
+
+@using (Html.BeginForm("Delete", "Department", FormMethod.Post))
+{
+    <p>
+        <input type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+

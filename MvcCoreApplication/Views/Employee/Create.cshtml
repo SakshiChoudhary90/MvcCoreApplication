@@ -1,0 +1,54 @@
+﻿@model MvcCoreApplication.Models.Employee
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    @*<label for="DeptName">Name</label>
+        <input type="text" name="Name" />*@
+    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)
+
+    <br />
+
+    @*<label for="Location">Location</label>
+        <input type="text" name="Location" />*@
+    @Html.EditorFor(model => model.Email)
+    @Html.LabelFor(model => model.Email)
+    <br />
+
+    @Html.EditorFor(model => model.Salary)
+    @Html.LabelFor(model => model.Salary)
+
+    <br />
+
+    @Html.EditorFor(model => model.EmployeeAddedDate)
+    @Html.LabelFor(model => model.EmployeeAddedDate)
+
+    <br />
+
+
+    @Html.EditorFor(model => model.DepartmentId)
+    @Html.LabelFor(model => model.DepartmentId)
+
+    <br />
+
+
+    @Html.EditorFor(model => model.JobId)
+    @Html.LabelFor(model => model.JobId)
+
+    <br />
+
+    @Html.EditorFor(model => model.MgrId)
+    @Html.LabelFor(model => model.MgrId)
+
+    <br />
+
+    <input type="submit" value="Create Employee" />
+}
+
+
+

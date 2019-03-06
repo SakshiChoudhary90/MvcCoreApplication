@@ -1,0 +1,27 @@
+﻿@model MvcCoreApplication.Models.Manager
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Manager", FormMethod.Post))
+{
+    @*<label for="DeptName">Name</label>
+        <input type="text" name="Name" />*@
+    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)
+
+    <br />
+
+    @*<label for="Location">Location</label>
+        <input type="text" name="Location" />*@
+    @Html.EditorFor(model => model.Email)
+    @Html.LabelFor(model => model.Email)
+    <br />
+
+   <input type="submit" value="Create Manager" />
+}
+
+
+

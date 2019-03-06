@@ -1,0 +1,24 @@
+﻿@model MvcCoreApplication.Models.Job
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h2> Are You sure to  Delete the Value </h2>
+
+@Html.DisplayFor(model => model.JobTitle)
+<br>
+
+@Html.DisplayFor(model => model.JobAddedDate)
+<br>
+
+@using (Html.BeginForm("Delete", "Job", FormMethod.Post))
+{
+    <p>
+        <input type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+

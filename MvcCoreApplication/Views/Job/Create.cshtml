@@ -1,0 +1,21 @@
+﻿@model MvcCoreApplication.Models.Job
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Job", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.JobTitle)
+    @Html.EditorFor(model => model.JobTitle)
+
+
+    <br />
+
+    @Html.LabelFor(model => model.JobAddedDate)
+    @Html.EditorFor(model => model.JobAddedDate)
+
+    <br />
+    <input type="submit" value="Create Job" />
+}
